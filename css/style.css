@@ -1,51 +1,153 @@
-body, html {
-  width: 100%;
-  height: 100%;
-  font-family: Apple Chancery, cursive;
+@import url(http://fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900);
+@import url(http://fonts.googleapis.com/css?family=Clicker+Script);
+
+/* comment*/
+
+/* CSS Syntax:
+selector {
+  property: value;
+  property: value;
+}
+*/
+
+/* Type selector */
+
+p { /* select all <p> */
+  font-size: 1em; /* 16px, ?pt, 100%, 1em */
+  line-height: 1.5em;
+}
+
+figcaption {
+  /*font-weight: normal;
+  font-size: 0.75em;
+  line-height: 1.5em;
+  font-family: Georgia, "New Times Roman", serif;*/
+  font: normal 0.75em/1.5em 'Elsie Swash Caps', cursive;
+  color: #777;
+  text-align: right;
+}
+
+/* Class selector (applied to as many elements as you like) */
+
+.milk-text { /* select elements with class="milk-text" */
+  font: bold 2.6em 'Elsie Swash Caps', cursive;
+  color: white;
+  text-shadow: 0 2px 3px #000;
+}
+
+/* ID selector (apply to one unique element per page) */
+
+#logo { /* select elements with id="logo" */
+
+}
+
+/* Descendent Selector */
+
+#logo h1 { /* selects <h1> if inside the id="logo" */
+  font-family: 'Clicker Script', cursive;
+}
+
+#logo h2 {
+  font-family: 'Elsie Swash Caps', cursive;
+}
+
+/* Psuedo Selector */
+
+#details a:link, #details a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+#details a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+#details a:active {
+  color: red;
+}
+
+/* /////// MEDIA ///////// */
+
+img, video, audio {
+  max-width: 100%;
+}
+
+/* /////// LAYOUT /////// */
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.wrapper {
+  width: 1080px;
   margin: 0 auto;
+}
+
+.col-1 {
+  float: left;
+  width: 32%;
+  background: #ccc;
+}
+
+.col-2 {
+  float: left;
+  width: 66%;
+  background: #ccc;
+}
+
+.col-3 {
+  background: #ccc;
+}
+
+.clearfix:after {
+  content: ".";
   display: block;
-  text-align: center;
-  background-color: #666;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
 }
 
-.container, h1 {
-  width: 80%;
-  max-width: 600px;
-  min-width: 400px;
-  padding: 10px;
-  margin: 10px auto;
+[class*="col-"] {
+  margin-left: 2%;
 }
 
-h4 {
-  width: fit-content;
-  display: inline-block;
-  padding: 5px;
-  margin: 20px 0 0 0;
+.first {
+  margin-left: 0%;
 }
 
-img:hover {
-  transition-duration: 1s;
-  transform: scale(1.05);
+/* /////// SECTIONS //////*/
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  z-index: 1;
 }
 
-.amiable {
-  border: 1px solid #22aa44;
-  box-shadow:  -1px 1px #22aa44, -2px 2px #22aa44, -3px 3px #22aa44, -4px 4px #22aa44, -5px 5px #22aa44;
-  background-color: #44cc66;
+section {
+  padding: 20px;
+  margin-bottom: 20px;
 }
 
-.indifferent {
-  border: 1px solid #aaaa00;
-  box-shadow:  -1px 1px #aaaa00, -2px 2px #aaaa00, -3px 3px #aaaa00, -4px 4px #aaaa00, -5px 5px #aaaa00;
-  background-color: #dddd22;
+/* /////// SOCIAL //////*/
+
+#social {
+  position: fixed;
+  top: 200px;
+  right: 20px;
+  width: 40px;
+  z-index: 1;
 }
 
-.dubious {
-  border: 1px solid #aa2222;
-  box-shadow: -1px 1px #aa2222, -2px 2px #aa2222, -3px 3px #aa2222, -4px 4px #aa2222, -5px 5px #aa2222;
-  background-color: #dd4444;
+#social a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: yellow;
 }
-
-/* create a column class! make sure all of the divs within 'container's have a class of 'column' */
-
-/* create your tile classes! we recommend .small .med .large */
